@@ -5,6 +5,7 @@ import com.example.recipeapi.repository.RecipeRepository;
 import org.springframework.stereotype.Service;
 
 
+import java.util.Collections;
 import java.util.List;
 
 
@@ -22,4 +23,7 @@ public class RecipeService {
         return recipeRepository.findAll();
     }
 
+    public List<Recipe> getRecipeByID(Long id) {
+        return recipeRepository.findAllById(Collections.singleton(id));
+    }
 }
